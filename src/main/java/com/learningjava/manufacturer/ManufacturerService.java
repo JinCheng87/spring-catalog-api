@@ -22,5 +22,11 @@ public class ManufacturerService {
 	public void updateManufacturer(int id, Manufacturer manufacturer) {
 		manufacturerRepository.save(manufacturer);
 	}
+	public void deleteManufacturer(int id) {
+		manufacturerRepository.delete(id);
+	}
+	public Manufacturer getManufacturer(int id) {
+		return manufacturerRepository.findOne(id);
+	}
 		
 }

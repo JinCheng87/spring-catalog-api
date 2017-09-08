@@ -28,4 +28,14 @@ public class ManufacturerController {
 	public void updateManufacturer(@RequestBody Manufacturer manufacturer, @PathVariable int id) {
 		manufacturerService.updateManufacturer(id, manufacturer);
 	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="/manufacturers/{id}")
+	public void deleteManufacturer(@PathVariable int id) {
+		manufacturerService.deleteManufacturer(id);
+	}
+	
+	@RequestMapping("/manufacturers/{id}")
+	public Manufacturer getManufacturer(@PathVariable int id) {
+		return manufacturerService.getManufacturer(id);
+	}
 }
