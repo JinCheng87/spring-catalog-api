@@ -19,6 +19,8 @@ public class ManufacturerService {
 		
 		manufacturerRepository.save(manufacturer);
 	}
-	
-	
+	public void updateManufacturer(int id, Manufacturer manufacturer) {
+		manufacturerRepository.save(manufacturer);
+	}
+		
 }
