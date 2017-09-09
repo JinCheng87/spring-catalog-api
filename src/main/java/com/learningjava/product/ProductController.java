@@ -23,4 +23,17 @@ public class ProductController {
 	public List<Product> getAllProducts(@PathVariable int id) {
 		return productService.getAllProducts(id);
 	}
+	@RequestMapping("/manufacturers/{manufacturerId}/products/{id}")
+	public Product getProduct(@PathVariable int id) {
+		return productService.getProduct(id);
+	}
+	@RequestMapping(method=RequestMethod.DELETE, value="/manufacturers/{manufacturerId}/products/{id}")
+	public void deleteProduct(@PathVariable int id) {
+		productService.deleteProduct(id);
+	}
+	@RequestMapping(method=RequestMethod.PUT, value="/manufacturers/{manufacturerId}/products/{id}")
+	public void updateProduct(@RequestBody Product product, @PathVariable int manufacturerId, @PathVariable int id) {
+		product.setManufacturer(new Manufacturer(manufacturerId, "", ""));
+		productService.updateProduct(product);
+	}
 }

@@ -20,4 +20,13 @@ public class ProductService {
 		productRepository.findAll().forEach(products::add);
 		return products;
 	}
+	public Product getProduct(int id) {
+		return productRepository.findOne(id);
+	}
+	public void deleteProduct(int id) {
+		productRepository.delete(id);
+	}
+	public void updateProduct(Product product) {
+		productRepository.save(product);
+	}
 }
